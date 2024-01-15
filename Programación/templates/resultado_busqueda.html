@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .logo {
+            max-height: 100px;
+            margin-right: 1px; /* Ajusta el margen según tus necesidades */
+        }
+        .title {
+            font-size: 70px; /* Ajusta el tamaño de la letra según tus necesidades */
+            color: #000000; /* Color del texto del título */
+            text-align: center;
+            flex-grow: 0.6;
+            font-family: 'Bernard MT Condensed', sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body> 
+    <header class="container-fluid">
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='Logotipo.jpg') }}" alt="Logo" class="img-fluid logo">
+            <h1 class="title">Resultado de Búsqueda</h1>
+        </div>
+    
+    </header>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>N° de Muestra</th>
+                <th>Nombre del Proyecto</th>
+                <th>Sondeo</th>
+                <th>Localización</th>
+                <th>Profundidad</th>
+                <th>Tipo de muestra</th>
+                <th>N° de golpes</th>
+                <th>Humedad(%)</th>
+                <th>Peso Unitario(gr)</th>
+                <th>% de gravas</th>
+                <th>% de arena</th>
+                <th>% de finos</th>
+                <th>D10</th>
+                <th>D50</th>
+                <th>D90</th>
+                <th>Almacén</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Observaciones</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultados %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    <td>{{ row[9] }}</td>
+                    <td>{{ row[10] }}</td>
+                    <td>{{ row[11] }}</td>
+                    <td>{{ row[12] }}</td>
+                    <td>{{ row[13] }}</td>
+                    <td>{{ row[14] }}</td>
+                    <td>{{ row[15] }}</td>
+                    <td>{{ row[16] }}</td>
+                    <td>{{ row[17] }}</td>
+                    <td>{{ row[18] }}</td>
+                    <td>{{ row[19] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+ 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .img-container {
+            position: absolute;
+            top: 10px; /* Ajusta la posición vertical de la imagen */
+            left: 300px; /* Ajusta la posición horizontal de la imagen */
+            z-index: 1; /* Asegura que la imagen esté detrás del texto */
+        }
+
+        .img-fluid {
+            max-width: 500%;
+            max-height: 1000%;
+        }
+
+        .text-container {
+            position: absolute;
+            top: 180px; /* Ajusta la posición vertical del texto */
+            left: 1000px; /* Ajusta la posición horizontal del texto */
+            z-index: 2; /* Asegura que el texto esté sobre la imagen */
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-container">
+        <img src="{{ url_for('static', filename='etiqueta.jpg') }}" alt="Logo" class="img-fluid" alt=""width="1500" heignt="1500">
+    </div>
+
+    <div class="text-container">
+        {% if resultados %}
+            <p>
+                {{ resultados[0] }}<br/>
+                {{ resultados[1] }}<br/>
+                {{ resultados[2] }}<br/>
+                {{ resultados[3] }}<br/>
+                {{ resultados[4] }}<br/>
+                {{ resultados[5] }}<br/>
+                {{ resultados[6] }}<br/>
+                {{ resultados[7] }}<br/>
+            </p>
+        {% else %}
+            <p>No se encontraron datos para el ID proporcionado.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
